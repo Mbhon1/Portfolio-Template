@@ -12,17 +12,17 @@ const Hero = (props) => {
         <div className="max-w-[450ox] text-black flex flex-col gap-[40px]">
           <div>
             <h1 className="text-5xl">{props.title}</h1>
-            <h4 className="mt-3 text-2xl">
+            <h4 className="mt-3 text-2xl text-white">
               <TypeWriter
                 onInit={(typewriter) => {
                   typewriter
                     .typeString("Hello World!")
                     .pauseFor(2500)
                     .deleteAll()
-                    .typeString("I'm a Junior Frontend Developer")
+                    .typeString("I'm a self-taught Junior Frontend Developer")
                     .pauseFor(2500)
-                    .deleteChars(27)
-                    .typeString("also a Junior Network Administrator")
+                    .deleteChars(37)
+                    .typeString("Junior Network Administrator")
                     .pauseFor(2500)
                     .start();
                 }}
@@ -37,7 +37,7 @@ const Hero = (props) => {
           </div>
           <div className="bg-[#ff4d41] h-[2px] w-[40px]"></div>
           <div>
-            <p>{props.description}</p>
+            <p className="text-white">{props.description}</p>
             <Button link="https://github.com/Mbhon1" text="Learn More" />
           </div>
         </div>

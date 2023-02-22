@@ -65,7 +65,7 @@ export default function Home() {
         />
         <Work />
         <Contact />
-        <Footer />
+        <Footer date="2023" rights="All Rigths reserved." />
       </main>
     </>
   );

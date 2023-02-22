@@ -3,7 +3,7 @@ import Headings from "./Headings";
 
 const Contact = () => {
   return (
-    <section className="container px-4 py-10 mx-auto">
+    <section id="contact" className="container px-4 py-10 mx-auto">
       <Headings title="Contact Us" />
 
       <form className="flex flex-col gap-8">

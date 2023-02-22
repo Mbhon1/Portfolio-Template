@@ -4,7 +4,7 @@ import { RiLightbulbFlashLine } from "react-icons/ri";
 
 const WhatIDo = () => {
   return (
-    <section className="container mx-auto py-10 px-4">
+    <section id="portfolio" className="container mx-auto py-10 px-4">
       <Headings title="What I Do" />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

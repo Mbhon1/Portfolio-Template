@@ -8,9 +8,9 @@ import { IoLocationOutline } from "react-icons/io5";
 import { TbPacman } from "react-icons/tb";
 import Button from "./Button";
 
-const About = () => {
+const About = (props) => {
   return (
-    <section className="container px-4 py-10 mx-auto">
+    <section id="about" className="container px-4 py-10 mx-auto">
       <Headings title="About Me" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[60px]">
         <div>
@@ -54,24 +54,20 @@ const About = () => {
               <div>:</div>
             </div>
             <div className="flex flex-col gap-6 text-gray-600">
-              <div>29.10.1997</div>
-              <div>Rosebank College</div>
-              <div>www.gypsy.com</div>
-              <div>Reading and Blogging</div>
-              <div>11803 Maseli Street</div>
+              <div>{props.date}</div>
+              <div>{props.tertiary}</div>
+              <div>{props.website}</div>
+              <div>{props.interests}</div>
+              <div>{props.street}</div>
             </div>
           </div>
           <div className="max-w-[800px]">
-            <h2 className="font-bold mt-16 mb-10">
-              I'm Gypsy and a Fontend Developer
-            </h2>
-            <p className="text-gray-600">
-              {" "}
-              Hi my name is Gypsy King. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Quis sapiente cupiditate repudiandae alias minus
-              incidunt nihil aspernatur culpa vel id!
-            </p>
-            <Button link="#" text="Hire Me" />
+            <h2 className="font-bold mt-16 mb-10">{props.title}</h2>
+            <p className="text-gray-600"> {props.description}</p>
+            <Button
+              link="https://mbhoniprofilecard.netlify.app/"
+              text="Hire Me"
+            />
           </div>
         </div>
       </div>

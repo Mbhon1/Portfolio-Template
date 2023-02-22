@@ -1,10 +1,8 @@
 import React from "react";
 import { RiCloseFill } from "react-icons/ri";
-import { useRouter } from "next/router";
+import { Link } from "react-scroll";
 
 const Sidebar = (props) => {
-  const router = useRouter();
-
   return (
     <div
       className={`w-screen h-screen ${
@@ -18,27 +16,56 @@ const Sidebar = (props) => {
         <RiCloseFill />
       </div>
       <div className="flex flex-col gap-4 text-[28px]">
-        <a
-          href="#"
-          onClick={() => {
-            router.push("/about");
-          }}
+        <Link
+          to="hero"
+          spy={true}
+          smooth={true}
+          offset={-0}
+          duration={500}
           className="hover:text-emerald-700"
         >
           Home
-        </a>
-        <a href="#" className="hover:text-emerald-700">
+        </Link>
+        <Link
+          to="about"
+          spy={true}
+          smooth={true}
+          offset={-0}
+          duration={500}
+          className="hover:text-emerald-700"
+        >
           About
-        </a>
-        <a href="#" className="hover:text-emerald-700">
+        </Link>
+        <Link
+          to="portfolio"
+          spy={true}
+          smooth={true}
+          offset={-0}
+          duration={500}
+          className="hover:text-emerald-700"
+        >
           Portfolio
-        </a>
-        <a href="#" className="hover:text-emerald-700">
+        </Link>
+        <Link
+          to="blog"
+          spy={true}
+          smooth={true}
+          offset={-0}
+          duration={500}
+          className="hover:text-emerald-700"
+        >
           Blogs
-        </a>
-        <a href="#" className="hover:text-emerald-700">
+        </Link>
+        <Link
+          to="contact"
+          spy={true}
+          smooth={true}
+          offset={-0}
+          duration={500}
+          className="hover:text-emerald-700"
+        >
           Contact
-        </a>
+        </Link>
       </div>
     </div>
   );

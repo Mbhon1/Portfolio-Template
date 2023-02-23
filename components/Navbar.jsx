@@ -61,7 +61,8 @@ const Navbar = (props) => {
           </Link>
         </div>
         <a
-          href="#"
+          download="My-Resume.pdf"
+          href="My-Resume.pdf"
           className="hidden md:flex border border-emerald-700 px-4 py-1 text-emerald-700 rounded-[5px] items-center gap2 hover:bg-emerald-700 hover:text-white transition duration-200"
         >
           Download Resume

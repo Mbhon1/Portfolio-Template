@@ -1,34 +1,55 @@
 import React from "react";
 import Headings from "./Headings";
+import emailjs from "node_modules/emailjs-com";
+import Swal from "sweetalert2";
+
+// ! These API keys are meant to be public while using the EmailJs services and it's endpoints.
+const SERVICE_ID = "service_iquonrh";
+const TEMPLATE_ID = "template_1ipf8jz";
+const USER_ID = "emWpaSnr3C9Ar-DR_";
 
 const Contact = () => {
+  function handleOnSubmit(e) {
+    e.preventDefault();
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID).then(
+      (result) => {
+        Swal.fire({ title: "Message Sent!", icon: "success" });
+      },
+      (error) => {
+        Swal.fire({ title: "Ooops, something went wrong!", icon: "error" });
+      }
+    );
+    // * clears the form after sending the email
+    e.target.reset();
+  }
+
   return (
     <section id="contact" className="container px-4 py-10 mx-auto">
       <Headings title="Contact Me" />
 
-      <form className="flex flex-col gap-8">
+      <form onSubmit={handleOnSubmit} className="flex flex-col gap-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <input
-            type={"text"}
+            name="from_name"
             placeholder="Name"
             className="inputStyle"
             required
           />
           <input
-            type={"email"}
+            name="from_email"
             placeholder="Email"
             className="inputStyle"
             required
           />
         </div>
         <input
-          type={"text"}
+          name="from_subject"
           placeholder="Subject"
           className="inputStyle"
           required
         />
         <textarea
-          name=""
+          name="message"
           className="inputStyle"
           placeholder="Message"
           rows="6"
